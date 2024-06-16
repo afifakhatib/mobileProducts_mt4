@@ -1,0 +1,69 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12"
+     *ngFor="let prod of productsArr">
+    <div class="card mt-4 p-4"
+    [ngClass]="{
+        'noAvailable' : !prod.isAvailable
+    }">
+     <ng-container>
+      <p class="noAvl"
+      *ngIf="!prod.isAvailable">Currently OutOf Stock !!!</p>
+    </ng-container>
+    
+        <div class="row">
+            <div class="col-md-3">
+              <div class="mobileImg mb-2">
+                <img [src]="prod.image" [alt]="prod.model"
+                 [title]="prod.model"
+                 *ngIf="prod.image ; else noimg">
+                <ng-template #noimg>
+                  <img src="https://placehold.co/600x400" alt="">
+                </ng-template>
+              </div>
+            </div>
+            <div class="col-md-6">
+               <h4>{{prod.brand}}:{{prod.model}}({{prod.color}})
+                <span class="rounded p-1"
+                [ngClass]="{
+                    'bg-success' : prod.rating >= 4,
+                    'bg-warning' : prod.rating < 4 && prod.rating > 3,
+                    'bg-danger'  : prod.rating <= 3
+                }"> {{prod.rating}} </span>
+               </h4>
+               <ul>
+                <li> {{prod.storage}} </li>
+                <li> {{prod.screen_size}} </li>
+                <li> {{prod.processor}} </li>
+                <li> {{prod.camera_setup}} </li>
+                <li> {{prod.battery_capacity}} </li>
+                <li 
+                *ngFor="let feat of prod.features"> {{feat}} </li>
+            </ul>
+            </div>
+            <div class="col-md-3">
+              <div class="offersec">
+                <h4> {{prod.price}} </h4>
+              <div class="filpkart-assured">
+              <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/fa_62673a.png"
+               alt="assured" title="assured">
+              </div>
+              <div class="offer">
+                <p class="m-0">
+                    Free Delivery 
+                </p>
+                <p>
+                    save extra with combo offer
+                </p>
+              </div>
+              <p class="m-0 cart rounded">
+                Add to Cart
+              </p>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+</div>

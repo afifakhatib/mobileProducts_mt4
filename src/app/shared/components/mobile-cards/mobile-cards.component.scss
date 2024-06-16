@@ -1,0 +1,56 @@
+
+.card{
+    position: relative;
+}
+
+.mobileImg{
+    height : 350px;
+    width : 100%;
+    img{
+        height : 100%;
+        width : 100%;
+        object-fit: cover;
+    }
+}
+
+.noAvailable{
+    filter : blur(1px) grayscale(0.6);
+}
+
+.noAvl{
+    position: absolute;
+    top : 55%;
+    right : 0;
+    bottom : 0;
+    left : 0;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    color  : rgb(245, 35, 35);
+}
+
+.filpkart-assured{
+    width : 40%;
+    img{
+        width : 100%;
+        object-fit: cover;
+    }
+}
+
+.offer p:first-child{
+    text-transform: capitalize;
+    color : #000;
+    font-weight: 500;
+}
+
+.offer p:last-child{
+    text-transform: capitalize;
+    color : green;
+    font-weight: bold;
+}
+
+.cart{
+    background-color: orange;
+    padding : 10px;
+    width : 55%;
+}
